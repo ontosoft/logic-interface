@@ -1,0 +1,1178 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://dms.org/logicinterface/"
+     xml:base="http://dms.org/logicinterface/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:fo="https://www.bbc.co.uk/ontologies/fo"
+     xmlns:gr="http://purl.org/goodrelations/v1#"
+     xmlns:li="http://dms.org/logicinterface/"
+     xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:dctypes="http://purl.org/dc/dcmitype/"
+     xmlns:ontologies="https://www.bbc.co.uk/ontologies/">
+    <owl:Ontology rdf:about="http://dms.org/logicinterface">
+        <owl:versionIRI rdf:resource="http://dms.org/v1"/>
+        <owl:imports rdf:resource="http://purl.org/goodrelations/v1"/>
+        <dc:contributor xml:lang="en">Ontology for the construction of user interfaces to populate ontology knowledge bases.</dc:contributor>
+        <dc:creator xml:lang="en">Petko Rutesic</dc:creator>
+        <dc:rights xml:lang="en">The LogicInterface ontology is available under the Creative Commons Attribution 3.0 Unported license; see http://creativecommons.org/licenses/by/3.0/. In a nutshell, you are free to copy, distribute and transmit the work; to remix/adapt the work (e.g. to import the ontology and create specializations of its elements), as long as you attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work). Proper Attribution: Simply include the statement &quot;This work is based on the InterfaceLogic ontology, link back to http://dms.org/logicinterface/</dc:rights>
+        <dc:subject xml:lang="en">Ontology, Linked Data, RDF, Semantic Web</dc:subject>
+        <dc:title xml:lang="en">The LogicInterface Vocabulary for Semantic Web-based interface description and construction</dc:title>
+        <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+        <rdfs:comment xml:lang="en">The InterfaceLogic ontology provides the vocabulary for annotating models to describe interfaces
+
+Note: The base URI of LogicInterface is http://dms.org/logicinterface/v1. Please make sure you are only using element identifiers in this namespace, e.g. http://dms.org/logicinterface/v1#Loop .</rdfs:comment>
+        <rdfs:label xml:lang="en">Logic Interface Ontology</rdfs:label>
+        <owl:versionInfo xml:lang="en">V 1.0, Release 2020-01-01</owl:versionInfo>
+        <foaf:homepage rdf:resource="http://dms.org/logicinterface/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dms.org/logicinterface/belongsTo -->
+
+    <owl:AnnotationProperty rdf:about="http://dms.org/logicinterface/belongsTo">
+        <rdfs:range rdf:resource="http://dms.org/logicinterface/InterfaceContainer"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/haspositionnumber -->
+
+    <owl:AnnotationProperty rdf:about="http://dms.org/logicinterface/haspositionnumber"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/subject -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/subject"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#legalName -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/goodrelations/v1#legalName"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#name -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/goodrelations/v1#name"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#offers -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/goodrelations/v1#offers"/>
+    
+
+
+    <!-- http://www.w3.org/2003/06/sw-vocab-status/ns#term_status -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/homepage -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#nonnegativeinteger -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#nonnegativeinteger"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dms.org/logicinterface/activateNew -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/activateNew">
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/Button"/>
+        <rdfs:range rdf:resource="http://dms.org/logicinterface/Loop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/activatesAction -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/activatesAction">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://dms.org/logicinterface/Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/belongsTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/VisualElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/containsDatatype -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/containsDatatype">
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:comment xml:lang="en-gb">The containsDatatype relates a field to a DataProperty which should be inserted into the field. In this way, the model ontology is related to the interface</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/generatedAccordingToModel -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/generatedAccordingToModel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/hasBranch -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/hasBranch">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://dms.org/logicinterface/Branch"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/hasCondition -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/hasCondition">
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/Branch"/>
+        <rdfs:range rdf:resource="http://dms.org/logicinterface/Condition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/hasConnection -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/hasConnection">
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/Action"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Connection"/>
+        <rdfs:comment xml:lang="en-gb">The hasConnection relates a Loop element to a Connection that will be established between outher and inner part of the loop . </rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/hasDestination -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/hasDestination">
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/Connection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en-gb">The hasDestination property relates a Connection element to an individual which is a destination of an ObjectProperty.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/hasFileldValues -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/hasFileldValues">
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/ListField"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/hasLoop -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/hasLoop">
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/ProgrammingLogic"/>
+        <rdfs:range rdf:resource="http://dms.org/logicinterface/Loop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/hasSequence -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/hasSequence">
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/Loop"/>
+        <rdfs:range rdf:resource="http://dms.org/logicinterface/Sequence"/>
+        <vs:term_status>testing</vs:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/hasSource -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/hasSource">
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/Connection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/isFalse -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/isFalse">
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/Condition"/>
+        <rdfs:range rdf:resource="http://dms.org/logicinterface/Sequence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/isRelatedToTargetOntologyInstance -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/isRelatedToTargetOntologyInstance">
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/VisualElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en-gb">The isRelatedToDataOntologyInstance relates a Visual element to a concrete individual of the corresponding target ontology.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/isTrue -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/isTrue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/Condition"/>
+        <rdfs:range rdf:resource="http://dms.org/logicinterface/Sequence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/modelBelongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://dms.org/logicinterface/modelBelongsTo">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://dms.org/logicinterface/InterfaceContainer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/focuisine -->
+
+    <owl:ObjectProperty rdf:about="https://www.bbc.co.uk/ontologies/focuisine">
+        <rdfs:domain rdf:resource="https://www.bbc.co.uk/ontologies/foRecipe"/>
+        <rdfs:range rdf:resource="https://www.bbc.co.uk/ontologies/foCuisine"/>
+        <rdfs:comment xml:lang="en-gb">The cuisine property classifies a recipe as being an example of that cuisine.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/fo/"/>
+        <rdfs:label xml:lang="en-gb">cuisine</rdfs:label>
+        <vs:term_status>testing</vs:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/fodessert -->
+
+    <owl:ObjectProperty rdf:about="https://www.bbc.co.uk/ontologies/fodessert">
+        <rdfs:domain rdf:resource="https://www.bbc.co.uk/ontologies/foMenu"/>
+        <rdfs:range rdf:resource="https://www.bbc.co.uk/ontologies/foRecipe"/>
+        <rdfs:comment xml:lang="en-gb">The dessert property relates a menu to a recipe that may be served as a dessert.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/fo/"/>
+        <rdfs:label xml:lang="en-gb">dessert</rdfs:label>
+        <vs:term_status>testing</vs:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/fodiet -->
+
+    <owl:ObjectProperty rdf:about="https://www.bbc.co.uk/ontologies/fodiet">
+        <rdfs:domain rdf:resource="https://www.bbc.co.uk/ontologies/foRecipe"/>
+        <rdfs:range rdf:resource="https://www.bbc.co.uk/ontologies/foDiet"/>
+        <rdfs:comment xml:lang="en-gb">The diet property relates a recipe to a diet it may be suitable for.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/fo/"/>
+        <rdfs:label xml:lang="en-gb">diet</rdfs:label>
+        <vs:term_status>testing</vs:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/fofood -->
+
+    <owl:ObjectProperty rdf:about="https://www.bbc.co.uk/ontologies/fofood">
+        <rdfs:domain rdf:resource="https://www.bbc.co.uk/ontologies/foIngredient"/>
+        <rdfs:range rdf:resource="https://www.bbc.co.uk/ontologies/foFood"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/foingredients -->
+
+    <owl:ObjectProperty rdf:about="https://www.bbc.co.uk/ontologies/foingredients">
+        <rdfs:range rdf:resource="https://www.bbc.co.uk/ontologies/foIngredientList"/>
+        <rdfs:comment xml:lang="en-gb">The ingredients property relates a recipe or recipe stage to an ingredient list.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/fo/"/>
+        <rdfs:label xml:lang="en-gb">ingredients</rdfs:label>
+        <vs:term_status>testing</vs:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/fomain_course -->
+
+    <owl:ObjectProperty rdf:about="https://www.bbc.co.uk/ontologies/fomain_course">
+        <rdfs:domain rdf:resource="https://www.bbc.co.uk/ontologies/foMenu"/>
+        <rdfs:range rdf:resource="https://www.bbc.co.uk/ontologies/foRecipe"/>
+        <rdfs:comment xml:lang="en-gb">The main course property relates a menu to a recipe that may be served as a main course.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/fo/"/>
+        <rdfs:label xml:lang="en-gb">main course</rdfs:label>
+        <vs:term_status>testing</vs:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/foproduces -->
+
+    <owl:ObjectProperty rdf:about="https://www.bbc.co.uk/ontologies/foproduces">
+        <rdfs:domain rdf:resource="https://www.bbc.co.uk/ontologies/foRecipe"/>
+        <rdfs:range rdf:resource="https://www.bbc.co.uk/ontologies/foFood"/>
+        <rdfs:comment xml:lang="en-gb">The produces property relates a recipe to the food it produces.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/fo/"/>
+        <rdfs:label xml:lang="en-gb">produces</rdfs:label>
+        <vs:term_status>testing</vs:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/foside_dish -->
+
+    <owl:ObjectProperty rdf:about="https://www.bbc.co.uk/ontologies/foside_dish">
+        <rdfs:domain rdf:resource="https://www.bbc.co.uk/ontologies/foMenu"/>
+        <rdfs:range rdf:resource="https://www.bbc.co.uk/ontologies/foRecipe"/>
+        <rdfs:comment xml:lang="en-gb">The side dish property relates a menu to a recipe that may be served as a side dish.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/fo/"/>
+        <rdfs:label xml:lang="en-gb">side dish</rdfs:label>
+        <vs:term_status>testing</vs:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/fostarter -->
+
+    <owl:ObjectProperty rdf:about="https://www.bbc.co.uk/ontologies/fostarter">
+        <rdfs:domain rdf:resource="https://www.bbc.co.uk/ontologies/foMenu"/>
+        <rdfs:range rdf:resource="https://www.bbc.co.uk/ontologies/foRecipe"/>
+        <rdfs:comment xml:lang="en-gb">The starter property relates a menu to a recipe that may be served as a starter.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/fo/"/>
+        <rdfs:label xml:lang="en-gb">starter</rdfs:label>
+        <vs:term_status>testing</vs:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dms.org/logicinterface/belongsToModel -->
+
+    <owl:DatatypeProperty rdf:about="http://dms.org/logicinterface/belongsToModel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/finalValue -->
+
+    <owl:DatatypeProperty rdf:about="http://dms.org/logicinterface/finalValue">
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/Loop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/hasLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://dms.org/logicinterface/hasLabel">
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/VisualElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/hasPositionNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://dms.org/logicinterface/hasPositionNumber">
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/Field"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/hasValue -->
+
+    <owl:DatatypeProperty rdf:about="http://dms.org/logicinterface/hasValue">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en-gb">The hasValue data property relates an instance to a data assigned to that instance. One example is a Condition class.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/initialValue -->
+
+    <owl:DatatypeProperty rdf:about="http://dms.org/logicinterface/initialValue">
+        <rdfs:domain rdf:resource="http://dms.org/logicinterface/Loop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dms.org/logicinterface/isDefault -->
+
+    <owl:DatatypeProperty rdf:about="http://dms.org/logicinterface/isDefault">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en-gb">The is Default datatype property tells us whether a property is default. For instance a default value of an drop down list</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dms.org/logicinterface/Action -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/Action"/>
+    
+
+
+    <!-- http://dms.org/logicinterface/Block -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/Block">
+        <rdfs:subClassOf rdf:resource="http://dms.org/logicinterface/InterfaceContainer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dms.org/logicinterface/Branch -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/Branch"/>
+    
+
+
+    <!-- http://dms.org/logicinterface/Button -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/Button">
+        <rdfs:subClassOf rdf:resource="http://dms.org/logicinterface/VisualElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dms.org/logicinterface/Condition -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/Condition"/>
+    
+
+
+    <!-- http://dms.org/logicinterface/Connection -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/Connection"/>
+    
+
+
+    <!-- http://dms.org/logicinterface/Field -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/Field">
+        <rdfs:subClassOf rdf:resource="http://dms.org/logicinterface/VisualElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dms.org/logicinterface/InterfaceContainer -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/InterfaceContainer"/>
+    
+
+
+    <!-- http://dms.org/logicinterface/Label -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/Label">
+        <rdfs:subClassOf rdf:resource="http://dms.org/logicinterface/VisualElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dms.org/logicinterface/ListField -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/ListField">
+        <rdfs:subClassOf rdf:resource="http://dms.org/logicinterface/Field"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dms.org/logicinterface/ListValue -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/ListValue"/>
+    
+
+
+    <!-- http://dms.org/logicinterface/Loop -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/Loop">
+        <rdfs:subClassOf rdf:resource="http://dms.org/logicinterface/InterfaceContainer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dms.org/logicinterface/ProgrammingLogic -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/ProgrammingLogic"/>
+    
+
+
+    <!-- http://dms.org/logicinterface/Sequence -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/Sequence"/>
+    
+
+
+    <!-- http://dms.org/logicinterface/UserInterface -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/UserInterface"/>
+    
+
+
+    <!-- http://dms.org/logicinterface/ValuesCollection -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/ValuesCollection"/>
+    
+
+
+    <!-- http://dms.org/logicinterface/VisualElement -->
+
+    <owl:Class rdf:about="http://dms.org/logicinterface/VisualElement">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dms.org/logicinterface/Field"/>
+                    <rdf:Description rdf:about="http://dms.org/logicinterface/InterfaceContainer"/>
+                    <rdf:Description rdf:about="http://dms.org/logicinterface/Loop"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/dcmitype/Collection -->
+
+    <owl:Class rdf:about="http://purl.org/dc/dcmitype/Collection"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#BusinessEntity -->
+
+    <owl:Class rdf:about="http://purl.org/goodrelations/v1#BusinessEntity"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#Offering -->
+
+    <owl:Class rdf:about="http://purl.org/goodrelations/v1#Offering"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq -->
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Class -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Class"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Connection -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Connection"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#DatatypeProperty -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#ObjectProperty -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#namedindividual -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#namedindividual"/>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/foCollection -->
+
+    <owl:Class rdf:about="https://www.bbc.co.uk/ontologies/foCollection">
+        <rdfs:subClassOf rdf:resource="http://purl.org/dc/dcmitype/Collection"/>
+        <rdfs:comment xml:lang="en-gb">A Collection is a group of recipes that are brought together because they have something in common. Some collections may result from automated queries such as all recipes that share a particular ingredient, other collections may be the result of editorial selection.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/fo/"/>
+        <rdfs:label xml:lang="en-gb">Collection</rdfs:label>
+        <vs:term_status>testing</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/foCuisine -->
+
+    <owl:Class rdf:about="https://www.bbc.co.uk/ontologies/foCuisine"/>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/foDiet -->
+
+    <owl:Class rdf:about="https://www.bbc.co.uk/ontologies/foDiet"/>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/foFood -->
+
+    <owl:Class rdf:about="https://www.bbc.co.uk/ontologies/foFood"/>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/foIngredient -->
+
+    <owl:Class rdf:about="https://www.bbc.co.uk/ontologies/foIngredient"/>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/foIngredientList -->
+
+    <owl:Class rdf:about="https://www.bbc.co.uk/ontologies/foIngredientList">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+        <rdfs:comment xml:lang="en-gb">An IngredientList is a sequence (rdf:Seq) of ingredients in the order they should be listed in the recipe.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/fo/"/>
+        <rdfs:label xml:lang="en-gb">IngredientList</rdfs:label>
+        <vs:term_status>testing</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/foMenu -->
+
+    <owl:Class rdf:about="https://www.bbc.co.uk/ontologies/foMenu">
+        <rdfs:subClassOf rdf:resource="https://www.bbc.co.uk/ontologies/foCollection"/>
+        <rdfs:comment xml:lang="en-gb">A Menu is a collection of recipes, usually one or more per course, that have been selected to go well together. A Menu may also be related to a particular cuisine or occasion.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/fo/"/>
+        <rdfs:label xml:lang="en-gb">Menu</rdfs:label>
+        <vs:term_status>testing</vs:term_status>
+    </owl:Class>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/foRecipe -->
+
+    <owl:Class rdf:about="https://www.bbc.co.uk/ontologies/foRecipe"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dms.org/logicinterface/action_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/action_1">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Action"/>
+        <hasConnection rdf:resource="http://dms.org/logicinterface/conn_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/block_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/block_1">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Block"/>
+        <hasPositionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasPositionNumber>
+        <dc:title rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">block_1 restaurant</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/block_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/block_2">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Block"/>
+        <belongsTo rdf:resource="http://dms.org/logicinterface/loop_1"/>
+        <dc:title rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">block_2 menus</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/block_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/block_3">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Block"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/block_4_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/block_4_1">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Block"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/block_4_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/block_4_2">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Block"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/block_4_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/block_4_3">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Block"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/branch_3_1_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/branch_3_1_1">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Branch"/>
+        <hasCondition rdf:resource="http://dms.org/logicinterface/condition_3_1_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/button_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/button_1">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Button"/>
+        <activateNew rdf:resource="http://dms.org/logicinterface/loop_1"/>
+        <activatesAction rdf:resource="http://dms.org/logicinterface/action_1"/>
+        <hasLabel>Insert new menu</hasLabel>
+        <belongsTo rdf:resource="http://dms.org/logicinterface/block_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/button_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/button_2">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Button"/>
+        <belongsTo rdf:resource="http://dms.org/logicinterface/block_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/condition_3_1_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/condition_3_1_1">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Condition"/>
+        <hasValue rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">main_course</hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/conn_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/conn_1">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Connection"/>
+        <containsDatatype rdf:resource="http://purl.org/goodrelations/v1#offer"/>
+        <hasDestination rdf:resource="http://dms.org/logicinterface/menu_1"/>
+        <hasSource rdf:resource="http://dms.org/logicinterface/restaurant_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/conn_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/conn_2">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Connection"/>
+        <containsDatatype rdf:resource="https://www.bbc.co.uk/ontologies/fofood"/>
+        <hasDestination rdf:resource="http://dms.org/logicinterface/food_1"/>
+        <hasSource rdf:resource="http://dms.org/logicinterface/ingredients_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/field_1_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/field_1_1">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Field"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#namedindividual"/>
+        <containsDatatype rdf:resource="http://purl.org/goodrelations/v1#legalName"/>
+        <isRelatedToTargetOntologyInstance rdf:resource="http://dms.org/logicinterface/restaurant_1"/>
+        <hasLabel>Restaurant name</hasLabel>
+        <hasPositionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasPositionNumber>
+        <belongsTo rdf:resource="http://dms.org/logicinterface/block_1"/>
+        <dc:title>field_1_1_restaurant_name</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/field_1_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/field_1_2">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Field"/>
+        <containsDatatype rdf:resource="http://purl.org/goodrelations/v1#legalName"/>
+        <hasPositionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</hasPositionNumber>
+        <belongsTo rdf:resource="http://dms.org/logicinterface/block_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/field_1_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/field_1_3">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Field"/>
+        <containsDatatype rdf:resource="http://purl.org/goodrelations/v1#legalName"/>
+        <hasPositionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</hasPositionNumber>
+        <belongsTo rdf:resource="http://dms.org/logicinterface/block_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/field_2_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/field_2_1">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Field"/>
+        <hasPositionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</hasPositionNumber>
+        <belongsTo rdf:resource="http://dms.org/logicinterface/block_2"/>
+        <rdfs:label xml:lang="en-gb">Restaurant name </rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/field_2_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/field_2_2">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Field"/>
+        <containsDatatype rdf:resource="http://purl.org/goodrelations/v1#name"/>
+        <isRelatedToTargetOntologyInstance rdf:resource="http://dms.org/logicinterface/menu_1"/>
+        <hasPositionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</hasPositionNumber>
+        <belongsTo rdf:resource="http://dms.org/logicinterface/block_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/field_4_1_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/field_4_1_1">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Field"/>
+        <hasPositionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</hasPositionNumber>
+        <belongsTo rdf:resource="http://dms.org/logicinterface/block_4_1"/>
+        <rdfs:label xml:lang="en-gb">Ingredient 1 </rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/field_4_1_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/field_4_1_2">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Field"/>
+        <containsDatatype rdf:resource="http://purl.org/goodrelations/v1#name"/>
+        <isRelatedToTargetOntologyInstance rdf:resource="http://dms.org/logicinterface/menu_1"/>
+        <hasPositionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</hasPositionNumber>
+        <belongsTo rdf:resource="http://dms.org/logicinterface/block_4_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/food_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/food_1">
+        <rdf:type rdf:resource="https://www.bbc.co.uk/ontologies/foFood"/>
+        <modelBelongsTo rdf:resource="http://dms.org/logicinterface/block_3"/>
+        <dcterms:title xml:lang="en_gb">Chicken Cacciatore</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/ingredient_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/ingredient_1">
+        <rdf:type rdf:resource="https://www.bbc.co.uk/ontologies/foIngredient"/>
+        <modelBelongsTo rdf:resource="http://dms.org/logicinterface/block_3"/>
+        <ontologies:fofood rdf:resource="http://dms.org/logicinterface/food_1"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">chicken</dcterms:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/ingredients_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/ingredients_1"/>
+    
+
+
+    <!-- http://dms.org/logicinterface/listField_3_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/listField_3_1">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/ListField"/>
+        <hasBranch rdf:resource="http://dms.org/logicinterface/branch_3_1_1"/>
+        <belongsTo rdf:resource="http://dms.org/logicinterface/block_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/listvalue_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/listvalue_1">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/ListValue"/>
+        <isDefault rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isDefault>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/loop_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/loop_1">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Loop"/>
+        <hasConnection rdf:resource="http://dms.org/logicinterface/conn_1"/>
+        <hasPositionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</hasPositionNumber>
+        <belongsTo rdf:resource="http://dms.org/logicinterface/block_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/loop_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/loop_2">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/Loop"/>
+        <hasConnection rdf:resource="http://dms.org/logicinterface/conn_2"/>
+        <hasPositionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</hasPositionNumber>
+        <belongsTo rdf:resource="http://dms.org/logicinterface/block_4_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/maincourse_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/maincourse_1">
+        <rdf:type rdf:resource="https://www.bbc.co.uk/ontologies/foMenu"/>
+        <modelBelongsTo rdf:resource="http://dms.org/logicinterface/block_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/menu_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/menu_1">
+        <rdf:type rdf:resource="http://purl.org/goodrelations/v1#Offering"/>
+        <rdf:type rdf:resource="https://www.bbc.co.uk/ontologies/foMenu"/>
+        <modelBelongsTo rdf:resource="http://dms.org/logicinterface/block_3"/>
+        <ontologies:fodessert rdf:resource="http://dms.org/logicinterface/recipe_2"/>
+        <ontologies:fomain_course rdf:resource="http://dms.org/logicinterface/recipe_1"/>
+        <ontologies:fostarter rdf:resource="http://dms.org/logicinterface/recipe_3"/>
+        <gr:name rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Vegan menu</gr:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/menu_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/menu_2">
+        <rdf:type rdf:resource="http://purl.org/goodrelations/v1#Offering"/>
+        <rdf:type rdf:resource="https://www.bbc.co.uk/ontologies/foMenu"/>
+        <modelBelongsTo rdf:resource="http://dms.org/logicinterface/block_3"/>
+        <gr:name rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Italian Carnee menu</gr:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/recipe_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/recipe_1">
+        <rdf:type rdf:resource="https://www.bbc.co.uk/ontologies/foRecipe"/>
+        <ontologies:foproduces rdf:resource="http://dms.org/logicinterface/food_1"/>
+        <rdfs:comment xml:lang="en-gb">This is a main course.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/recipe_2 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/recipe_2">
+        <rdf:type rdf:resource="https://www.bbc.co.uk/ontologies/foRecipe"/>
+        <modelBelongsTo rdf:resource="http://dms.org/logicinterface/block_3"/>
+        <rdfs:comment xml:lang="en-gb">This is a starter.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/recipe_3 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/recipe_3">
+        <rdf:type rdf:resource="https://www.bbc.co.uk/ontologies/foRecipe"/>
+        <rdfs:comment xml:lang="en-gb">This is a dessert.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/restaurant_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/restaurant_1">
+        <rdf:type rdf:resource="http://purl.org/goodrelations/v1#BusinessEntity"/>
+        <modelBelongsTo rdf:resource="http://dms.org/logicinterface/block_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dms.org/logicinterface/user_interface_1 -->
+
+    <owl:NamedIndividual rdf:about="http://dms.org/logicinterface/user_interface_1">
+        <rdf:type rdf:resource="http://dms.org/logicinterface/UserInterface"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#legalName -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/goodrelations/v1#legalName"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#name -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/goodrelations/v1#name"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#offer -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/goodrelations/v1#offer"/>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/fofood -->
+
+    <owl:NamedIndividual rdf:about="https://www.bbc.co.uk/ontologies/fofood"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://dms.org/logicinterface/address">
+        <dc:title></dc:title>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://dms.org/logicinterface/belongsTo">
+        <rdfs:comment xml:lang="en-gb">The belongsTo property relates a visual element to an interface container it belongs to.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://www.bbc.co.uk/ontologies/fofood">
+        <vs:term_status>testing</vs:term_status>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/fo/"/>
+        <rdfs:comment xml:lang="en-gb">The food property relates an ingredient to the food that is required.</rdfs:comment>
+        <rdfs:label xml:lang="en-gb">food</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

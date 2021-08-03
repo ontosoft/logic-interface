@@ -1,0 +1,629 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/net/logic-interface/"
+     xml:base="http://purl.org/net/logic-interface/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:fo="https://www.bbc.co.uk/ontologies/fo"
+     xmlns:gr="http://purl.org/goodrelations/v1#"
+     xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:dctypes="http://purl.org/dc/dcmitype/"
+     xmlns:ontologies="https://www.bbc.co.uk/ontologies/"
+     xmlns:logic-interface="http://purl.org/net/logic-interface/">
+    <owl:Ontology rdf:about="http://purl.org/net/logic-interface">
+        <owl:versionIRI rdf:resource="http://purl.org/net/logic-interface/v1"/>
+        <dc:contributor xml:lang="en">Ontology for the construction of user interfaces to populate ontology knowledge bases.</dc:contributor>
+        <dc:creator xml:lang="en">Petko Rutesic</dc:creator>
+        <dc:rights xml:lang="en">The LogicInterface ontology is available under the Creative Commons Attribution 3.0 Unported license; see http://creativecommons.org/licenses/by/3.0/. In a nutshell, you are free to copy, distribute and transmit the work; to remix/adapt the work (e.g. to import the ontology and create specializations of its elements), as long as you attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work). Proper Attribution: Simply include the statement &quot;This work is based on the InterfaceLogic ontology, link back to http://dms.org/net/logici-nterface/</dc:rights>
+        <dc:subject xml:lang="en">Ontology, Linked Data, RDF, Semantic Web</dc:subject>
+        <dc:title xml:lang="en">The LogicInterface Vocabulary for ontology-based interface description and knowledge graph population</dc:title>
+        <rdfs:comment xml:lang="en">The InterfaceLogic ontology provides the vocabulary for annotating models to describe interfaces
+
+Note: The base URI of LogicInterface is http://purl.org/net/logic-interface/v1. Please make sure you are only using element identifiers in this namespace, e.g. http://purl.org/net/logic-interface/v1/Loop .</rdfs:comment>
+        <rdfs:label xml:lang="en">Logic Interface Ontology</rdfs:label>
+        <owl:versionInfo xml:lang="en">V 0.1, Release 2021-01-01</owl:versionInfo>
+        <foaf:homepage rdf:resource="http://purl.org/net/logic-interface/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/subject -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/subject"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#legalName -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/goodrelations/v1#legalName"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#name -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/goodrelations/v1#name"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#offers -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/goodrelations/v1#offers"/>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/belongsTo -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/net/logic-interface/belongsTo">
+        <rdfs:range rdf:resource="http://purl.org/net/logic-interface/InterfaceContainer"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/haspositionnumber -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/net/logic-interface/haspositionnumber"/>
+    
+
+
+    <!-- http://www.w3.org/2003/06/sw-vocab-status/ns#term_status -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/homepage -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#nonnegativeinteger -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#nonnegativeinteger"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/logic-interface/activateNew -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/activateNew">
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/Button"/>
+        <rdfs:range rdf:resource="http://purl.org/net/logic-interface/Loop"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:isDefinedBy xml:lang="en">activate new</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/activatesAction -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/activatesAction">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://purl.org/net/logic-interface/Action"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">activates action</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/belongsTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/VisualElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/containsDatatype -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/containsDatatype">
+        <rdfs:comment xml:lang="en-gb">The containsDatatype relates a field to a DataProperty which should be inserted into the field. In this way, the model ontology is related to the interface</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">contains datatype</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/generatedAccordingToModel -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/generatedAccordingToModel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">generated from the model</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/hasBranch -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/hasBranch">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://purl.org/net/logic-interface/Branch"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">has branch</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/hasCondition -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/hasCondition">
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/Branch"/>
+        <rdfs:range rdf:resource="http://purl.org/net/logic-interface/Condition"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">has condition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/hasConnection -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/hasConnection">
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/Action"/>
+        <rdfs:comment xml:lang="en-gb">The hasConnection relates a Loop element to a Connection that will be established between outher and inner part of the loop . </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">has connection</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/hasDestination -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/hasDestination">
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/Connection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en-gb">The hasDestination property relates a Connection element to an individual which is a destination of an ObjectProperty.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">has destination</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/hasFileldValues -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/hasFileldValues">
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/ListField"/>
+        <rdfs:comment xml:lang="en">The property contains values that can be chosen in graphical control elements such as drop down lists or multiple choice lists.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">has field values</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/hasLoop -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/hasLoop">
+        <rdfs:range rdf:resource="http://purl.org/net/logic-interface/Loop"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">has loop</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/hasSequence -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/hasSequence">
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/Loop"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">has sequence</rdfs:label>
+        <vs:term_status>testing</vs:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/hasSource -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/hasSource">
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/Connection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">has source</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/isFalse -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/isFalse">
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/Condition"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">false</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/isRelatedToTargetOntologyInstance -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/isRelatedToTargetOntologyInstance">
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/VisualElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en-gb">This object property relates a Visual element to a concrete individual of the corresponding target ontology.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">related to named individual</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/isTrue -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/isTrue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/Condition"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">true</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/modelBelongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/logic-interface/modelBelongsTo">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://purl.org/net/logic-interface/InterfaceContainer"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">model belongs to interface container</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/logic-interface/belongsToModel -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/logic-interface/belongsToModel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">The property specifies that a given element (e.g., a named individual) belongs to the model part (implant that consists of named individuals belonging to the domain ontologies).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">belongs to model</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/finalValue -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/logic-interface/finalValue">
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/Loop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">This property is used to specify the last (final value) in a loop.</rdfs:comment>
+        <rdfs:label rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">has final value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/hasLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/logic-interface/hasLabel">
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/VisualElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:isDefinedBy xml:lang="en">This property specifies the label of a visual element that has to stand next to that element. This could be a label next to the input field on a HTML form.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">has label</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/hasPositionNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/logic-interface/hasPositionNumber">
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/Field"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment xml:lang="en">This property specifies the position of an element on a HTML form. 
+This is an integer number that represents the ordinary position among all other elements in the corresponding form looking from the upper left corner.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">has position</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/hasValue -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/logic-interface/hasValue">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en-gb">The hasValue data property relates an instance to a data assigned to that instance. One example is a Condition class.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/initialValue -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/logic-interface/initialValue">
+        <rdfs:domain rdf:resource="http://purl.org/net/logic-interface/Loop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/isDefault -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/logic-interface/isDefault">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">The is Default datatype property tells us whether a property is default. For instance a default value of a drop down list.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">is default</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/logic-interface/Action -->
+
+    <owl:Class rdf:about="http://purl.org/net/logic-interface/Action">
+        <rdfs:comment xml:lang="en">An action represents an activity on the form. It could be a simple saving of data on the form and switching control flow to the next HTML form.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/Block -->
+
+    <owl:Class rdf:about="http://purl.org/net/logic-interface/Block">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/logic-interface/InterfaceContainer"/>
+        <rdfs:label rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">Block</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/Branch -->
+
+    <owl:Class rdf:about="http://purl.org/net/logic-interface/Branch">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">Branch</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/Button -->
+
+    <owl:Class rdf:about="http://purl.org/net/logic-interface/Button">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/logic-interface/VisualElement"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">Button</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/Condition -->
+
+    <owl:Class rdf:about="http://purl.org/net/logic-interface/Condition">
+        <rdfs:label rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">Condition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/Connection -->
+
+    <owl:Class rdf:about="http://purl.org/net/logic-interface/Connection">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">Connection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/Field -->
+
+    <owl:Class rdf:about="http://purl.org/net/logic-interface/Field">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/logic-interface/VisualElement"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:isDefinedBy xml:lang="en">Field</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/InterfaceContainer -->
+
+    <owl:Class rdf:about="http://purl.org/net/logic-interface/InterfaceContainer">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">Interface Container</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/Label -->
+
+    <owl:Class rdf:about="http://purl.org/net/logic-interface/Label">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/logic-interface/VisualElement"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:isDefinedBy xml:lang="en">Label</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/ListField -->
+
+    <owl:Class rdf:about="http://purl.org/net/logic-interface/ListField">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/logic-interface/Field"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/ListValue -->
+
+    <owl:Class rdf:about="http://purl.org/net/logic-interface/ListValue">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">List value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/Loop -->
+
+    <owl:Class rdf:about="http://purl.org/net/logic-interface/Loop">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/logic-interface/InterfaceContainer"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">Loop</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/ValuesCollection -->
+
+    <owl:Class rdf:about="http://purl.org/net/logic-interface/ValuesCollection">
+        <rdfs:label xml:lang="en">Collection of values</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/logic-interface/VisualElement -->
+
+    <owl:Class rdf:about="http://purl.org/net/logic-interface/VisualElement">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/net/logic-interface/Field"/>
+                    <rdf:Description rdf:about="http://purl.org/net/logic-interface/InterfaceContainer"/>
+                    <rdf:Description rdf:about="http://purl.org/net/logic-interface/Loop"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:label xml:lang="en">VisualElement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/logic-interface/listvalue_1 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/net/logic-interface/listvalue_1">
+        <rdf:type rdf:resource="http://purl.org/net/logic-interface/ListValue"/>
+        <isDefault rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isDefault>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://dms.org/logic-interface/address">
+        <dc:title></dc:title>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/net/logic-interface/belongsTo">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/logic-interface/v01"/>
+        <rdfs:comment xml:lang="en-gb">The belongsTo property relates a visual element to an interface container it belongs to.</rdfs:comment>
+        <rdfs:label xml:lang="en">belongs to</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

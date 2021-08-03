@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import { DataStore } from './data/DataStore';
+import { StoreAccessSelector as Selector } from './generator/StoreAccessSelector';
+import { ItemDisplay } from './generator/ItemDisplay';
+import { ModelNavigator } from './generator/ModelNavigator';
+import { ModelPresenter } from './generator/ModelPresenter';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+
+  render() {
+    return (
+      <div className="container-fluid">
+        <div className="row">
+            <Provider store={DataStore}>
+          <div className="col-2">
+              <ModelNavigator  />
+          </div>
+          <div className="col">
+                <ItemDisplay />
+          </div>
+            </Provider>
+        </div>
+        <div>
+          <Provider store={DataStore}>
+            <ModelPresenter store={DataStore} />
+          </Provider>
+        </div>
+      </div>
+    )
+  }
 }
-
-export default App;
