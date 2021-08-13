@@ -15,7 +15,7 @@ export class TemplateDataSource {
     getData = async(dataType, fileName) => {
         const rdfFile = await this.readFile(fileName);
         let rdfGraph = graph();
-        let doc = sym("http://dms.org/logicinterface");
+        let doc = sym("http://example.org/logicinterface/restaurant");
         //       let contentType = "text/turtle";
         let contentType1 = "application/rdf+xml";
         let rdfParse = parse(rdfFile, rdfGraph, doc.uri, contentType1);

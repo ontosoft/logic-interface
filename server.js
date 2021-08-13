@@ -5,7 +5,7 @@ const cors = require("cors");
 const fs = require("fs");
 const history = require("connect-history-api-fallback");
 
-const fileName = process.argv[2] || "./first-example.owl"
+const fileName = process.argv[2] || "./restaurant-example.owl"
 const port = process.argv[3] || 3500;
 
 let router = undefined;

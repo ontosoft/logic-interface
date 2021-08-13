@@ -22,7 +22,7 @@ export const ModelPresenter = connect(store => store, mapDispatchToProps)(
                 output: (storeState) => storeState.modelData[OUTPUTGRAPH] ,
                 //graph: (storeState) => storeState.modelData[RDFGRAPH],
                 currentForm: (storeState) => storeState.modelData[CURRENTFORM],
-                state: (storeState) => storeState.stateData
+                //state: (storeState) => storeState.stateData
             }
             this.state = this.selectData();
         }
@@ -36,8 +36,7 @@ export const ModelPresenter = connect(store => store, mapDispatchToProps)(
         // }
 
         printState = () => {
-            console.log("state");
-            //debugger
+            console.log("Extract output file:");
             console.log(this.props.store.getState());
         }
 

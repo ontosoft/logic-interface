@@ -4,7 +4,7 @@ import { Element } from "./Element";
 import { Action } from "./Action";
 import { Template } from "./Template";
 import {
-    XSD, ILOGIC, RDF_TYPE_NODE, BLOCK_TYPE, CONTAINS_DATATYPE_NODE,
+    XSD, OBOP, RDF_TYPE_NODE, BLOCK_TYPE, CONTAINS_DATATYPE_NODE,
     BUTTON_TYPE, FIELD_TYPE, LABEL_TYPE, BLOCK_NODE, ACTION_NODE,
     CONNECTION_TYPE, BELONGS_TO, MODEL_BELONGS_TO_NODE, ACTIVATES_ACTION_NODE,
     HAS_SOURCE_NODE, HAS_DESTINATION_NODE, IS_RELATED_TO_TARGET_INSTANCE_NODE,
@@ -32,10 +32,11 @@ export class TemplateFactory {
     }
 
     graph2Template = (rdfGraph) => {
+        
         this.template = new Template();
         // Template part for all forms
         this.rdfGraph = rdfGraph;
-        //Forms are at first populated
+        //Forms are first populated
         this.readAllForms();
         //Adding Html elements to forms
         this.readBelongingElementsToForms();
@@ -54,7 +55,7 @@ export class TemplateFactory {
         //that value is particularly important for the starting form and it is 
         //represented by value 1 
         this.template.forms.forEach(form => {
-            let hasPosition = ILOGIC("hasPositionNumber");
+            let hasPosition = OBOP("hasPositionNumber");
             let quads = this.rdfGraph.match(form.node, hasPosition, null, null)
             quads.forEach(q => { form.position = q.object.value })
             this.readModelPart(form);
@@ -192,7 +193,7 @@ export class TemplateFactory {
 
     setUpFirstForm = () => {
         this.template.firstForm = this.template.forms.find((form) => {
-            let hasPosition = ILOGIC("hasPositionNumber");
+            let hasPosition = OBOP("hasPositionNumber");
             let start = lit('1', undefined, XSD('int'));
             return this.rdfGraph.match(form.node, hasPosition, start, null).length > 0;
         });
