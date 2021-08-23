@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { CURRENTFORM, OUTPUTGRAPH , RDFGRAPH, TEMPLATES } from "../data/dataTypes";
-import {startRunningTemplate}  from "../data/StateActions";
+import { CURRENTFORM, OUTPUTGRAPH, RDFGRAPH, TEMPLATES } from "../data/dataTypes";
+import { startRunningTemplate } from "../data/StateActions";
 import * as ModelActions from "../data/modelActionCreators";
-import {createInnerTemplateAndCreateCurrentForm} from "../data/MultiActionCreators";
-
+import { createInnerTemplateAndCreateCurrentForm } from "../data/MultiActionCreators";
+import { graph, serialize, sym, parse } from "rdflib";
+import { OUTPUT_KG } from "../owlprocessor/InterfaceOntologyTypes";
+import outputfile from './output.owl';
 
 const mapDispatchToProps = {
-    ...ModelActions, 
+    ...ModelActions,
     processQuery: () => createInnerTemplateAndCreateCurrentForm(RDFGRAPH),
     startRunningTemplate
 }
@@ -19,9 +21,10 @@ export const ModelPresenter = connect(store => store, mapDispatchToProps)(
             super(props);
             this.selectors = {
                 //templates: (storeState) => storeState.modelData[TEMPLATES],
-                output: (storeState) => storeState.modelData[OUTPUTGRAPH] ,
+                output: (storeState) => this.previewGraph(storeState.modelData[OUTPUTGRAPH])
+                //output: (storeState) => storeState.modelData[OUTPUTGRAPH],
                 //graph: (storeState) => storeState.modelData[RDFGRAPH],
-                currentForm: (storeState) => storeState.modelData[CURRENTFORM],
+                //currentForm: (storeState) => storeState.modelData[CURRENTFORM],
                 //state: (storeState) => storeState.stateData
             }
             this.state = this.selectData();
@@ -35,20 +38,51 @@ export const ModelPresenter = connect(store => store, mapDispatchToProps)(
 
         // }
 
-        printState = () => {
-            console.log("Extract output file:");
-            console.log(this.props.store.getState());
+        previewGraph = (graph) => {
+
+            let base = OUTPUT_KG;
+            let serializedGraph = undefined;
+            serialize(undefined, graph, base, 'application/rdf+xml',
+                function (err, str) {
+                    console.log("Serialized output graph:")
+                    serializedGraph = str;
+                });
+            return serializedGraph;
+
         }
 
-        handleDataStoreChange (){
-            let newData = this.selectData(); 
+
+
+        printState = () => {
+            // const link = document.createElement('a');
+            // link.href = `output.owl`;
+            // document.body.appendChild(link);
+            // link.click();
+            // document.body.removeChild(link);
+
+            let outputKnowlegeGraph = this.props.store.getState().modelData[OUTPUTGRAPH];
+            let base = OUTPUT_KG;
+            serialize(undefined, outputKnowlegeGraph, base, 'application/rdf+xml',
+                function (err, str) {
+                    console.log("Serialized output graph:")
+                    console.log(str);
+                    //       localStorage.setItem("pageData", str);
+                });
+            //window.open(newPageUrl, "_blank") //to open new page           
+
+        }
+
+
+
+        handleDataStoreChange() {
+            let newData = this.selectData();
             Object.keys(this.selectors)
-                .filter(key => this.state[key]!== newData[key])
-                .forEach(key => this.setState({[key] : newData[key]}));
+                .filter(key => this.state[key] !== newData[key])
+                .forEach(key => this.setState({ [key]: newData[key] }));
         }
 
         componentDidMount = () => {
-            this.unsubscriber = this.props.store.subscribe( () => this.handleDataStoreChange());
+            this.unsubscriber = this.props.store.subscribe(() => this.handleDataStoreChange());
         }
 
         componentWillUnmount() {
@@ -67,17 +101,21 @@ export const ModelPresenter = connect(store => store, mapDispatchToProps)(
                     <button className="btn btn-primary m-2"
                         onClick={this.props.processQuery} >
                         Run model
-            </button>
+                    </button>
                     <button className="btn btn-secondary m-2"
                         onClick={this.printState} >
                         Export output file
-            </button>
+                    </button>
 
                 </div>
                 <div className="col">
+                    <div className="col bg-info text-white">
+                        <div className="navbar-brand">Output ontology instance:</div>
+                    </div>
                     <div className="bg-info">
                         <pre className="text-white">
-                            {JSON.stringify(this.state, null, 2)}
+                            {this.previewGraph(this.props.store.getState().modelData[OUTPUTGRAPH])}
+                         {/*   {JSON.stringify(this.state).replace(/\n/g, "<br/>")} */}
                         </pre>
                     </div>
                 </div>

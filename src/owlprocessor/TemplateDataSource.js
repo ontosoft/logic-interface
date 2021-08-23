@@ -1,4 +1,4 @@
-import { graph, parse, sym, match } from "rdflib";
+import { graph, parse, sym } from "rdflib";
 
 export class TemplateDataSource {
 
@@ -13,13 +13,13 @@ export class TemplateDataSource {
     }
 
     getData = async(dataType, fileName) => {
-        const rdfFile = await this.readFile(fileName);
-        let rdfGraph = graph();
+        const rdffile = await this.readFile(fileName);
+        let rdfgraph = graph();
         let doc = sym("http://example.org/logicinterface/restaurant");
-        //       let contentType = "text/turtle";
-        let contentType1 = "application/rdf+xml";
-        let rdfParse = parse(rdfFile, rdfGraph, doc.uri, contentType1);
-        return rdfGraph;
+        //       let contenttype2 = "text/turtle";
+        let contenttype1 = "application/rdf+xml";
+        let rdfparse = parse(rdffile, rdfgraph, doc.uri, contenttype1);
+        return rdfgraph;
     }
 
 }

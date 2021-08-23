@@ -1,4 +1,4 @@
-import { graph, sym, match, lit, Namespace, term, quad } from "rdflib";
+import { graph, sym, lit, quad, NamedNode } from "rdflib";
 import { Form } from "./Form";
 import { Element } from "./Element";
 import { Action } from "./Action";
@@ -8,7 +8,9 @@ import {
     BUTTON_TYPE, FIELD_TYPE, LABEL_TYPE, BLOCK_NODE, ACTION_NODE,
     CONNECTION_TYPE, BELONGS_TO, MODEL_BELONGS_TO_NODE, ACTIVATES_ACTION_NODE,
     HAS_SOURCE_NODE, HAS_DESTINATION_NODE, IS_RELATED_TO_TARGET_INSTANCE_NODE,
-    GENERATED_ACCORDING_TO_MODEL_NODE, NAMED_INDIVIDUAL_TYPE, NAMED_INDIVIDUAL_NODE
+    GENERATED_ACCORDING_TO_MODEL_NODE, NAMED_INDIVIDUAL_NODE,
+    OWL_ONTOLOGY_NODE, OWL_IMPORT_NODE, OUTPUT_KG
+
 
 } from "./InterfaceOntologyTypes";
 import {
@@ -25,6 +27,7 @@ import {
 // store to provide execution of SPARQL queries
 export class TemplateFactory {
     constructor() {
+        this.outputDoc = null;
         this.outputStore = null; //RDF store as a result of user maniputaltion with application forms
         this.rdfGraph = null;
         this.template = null;
@@ -32,7 +35,7 @@ export class TemplateFactory {
     }
 
     graph2Template = (rdfGraph) => {
-        
+
         this.template = new Template();
         // Template part for all forms
         this.rdfGraph = rdfGraph;
@@ -44,8 +47,23 @@ export class TemplateFactory {
         this.readActions();
         this.updateElementsWithActions()
         this.setUpFirstForm();
-        this.outputStore = graph();
+        this.createOutputStore();
         return this.template;
+    }
+
+    //Create result graph
+    createOutputStore = () => {
+        this.outputStore = graph();
+        this.outputDoc = this.outputStore.sym(OUTPUT_KG);
+        //Output store gets the same namespaces as the model graph
+        this.outputStore.namespaces = this.rdfGraph.namespaces;
+        // inserted rdf:type owl:Ontology 
+        this.outputStore.add(this.outputDoc, RDF_TYPE_NODE, OWL_ONTOLOGY_NODE, this.outputDoc);
+        //Copy imports from the model
+        this.rdfGraph.match(null, OWL_IMPORT_NODE, null, null)
+            .forEach(quad => {
+                this.outputStore.add(this.outputDoc, quad.predicate, quad.object, this.outputDoc);
+            });
     }
 
     readAllForms = () => {
@@ -241,11 +259,10 @@ export class TemplateFactory {
         // output graph with a new uniquely generated name/
 
         let namesToChange = {};
-        this.currentForm.model.match(null, null, null, null).forEach(quad => {
-            this.renameNamedIndividualsInImplant(temporaryGraph, namesToChange, quad);
+        this.currentForm.model.match(null, null, null, null).forEach(currentQuad => {
+            this.renameNamedIndividualsInImplant(temporaryGraph, namesToChange, currentQuad);
         });
-
-        // Insert the data from the HTML form into corresponding ontology data properties 
+        //Insert data from the HTML form into the corresponding ontology data properties 
         data.insertedData.forEach(e => {
             //TODO: check whether the corresponding element is unique
             // Finding corresponding element in our internal representation of template 
@@ -256,57 +273,56 @@ export class TemplateFactory {
                         formEl.modelInstance !== null
                         && formEl.node.value === e.id)
                 });
-            let newSubject = JSON.parse(JSON.stringify(element.modelInstance));
+                
+            let newSubject = new NamedNode(element.modelInstance);
             newSubject.value = namesToChange[element.modelInstance.value];
             temporaryGraph.add(newSubject, element.valueType,
                 temporaryGraph.literal(e.value));
             // GENERATED_ACCORDING_TO_MODEL_NODE is a temporary property which is used during program execution
             temporaryGraph.add(newSubject, GENERATED_ACCORDING_TO_MODEL_NODE,
-                element.modelInstance);
+                element.modelInstance, this.outputDoc);
         });
         temporaryGraph.match(null, null, null, null).forEach(quad => {
-            this.outputStore.add(quad);
+            this.outputStore.add(quad.subject, quad.predicate, quad.object, this.outputDoc);
         });
-
-        console.log("New output graph");
-        console.log(this.outputStore);
-        
-        console.log("All actions:")
-        console.log(this.template.actions)
-        let currentAction = this.template.actions.find( a => a.node.value === modelAction);
-        console.log(currentAction);
-
+        let currentAction = this.template.actions.find(a => a.node.value === modelAction);
         //this.generateCurrentForm();
         return this.outputStore;
     }
 
     /**
      * Each NameIndividual in the model implant has to be renamed to get a unique name by 
-     * concatenating a random hash value to the URI of the original Implant individual
+     * concatenating a random hash value to the URI of the original individual of the model implant
      */
-    renameNamedIndividualsInImplant = (temporaryGraph, namesToChange, quad) => {
+    renameNamedIndividualsInImplant = (temporaryGraph, namesToChange, currentQuad) => {
         //Generate for each NamedIndividual a new unique name 
-        let newSubject = JSON.parse(JSON.stringify(quad.subject));
-        let newObject = JSON.parse(JSON.stringify(quad.object));
-        if (this.isNamedIndividual(quad.subject)) {
-            if (!(quad.subject.value in namesToChange)) {
-                namesToChange[quad.subject.value] = quad.subject.value + "_" + generateHashCode();
-                newSubject.value = namesToChange[quad.subject.value];
+        let newSubject = undefined;
+        let newObject = undefined;
+        if (this.isNamedIndividual(currentQuad.subject)) {
+            if (!(currentQuad.subject.value in namesToChange)) {
+                namesToChange[currentQuad.subject.value] = currentQuad.subject.value + "_" + generateHashCode();
+                newSubject = new NamedNode(namesToChange[currentQuad.subject.value]);
             }
             else {
-                newSubject.value = namesToChange[quad.subject.value];
+
+                newSubject = new NamedNode(namesToChange[currentQuad.subject.value]);
             }
+        } else {
+            newSubject = currentQuad.subject;
         }
-        if (this.isNamedIndividual(quad.object)) {
-            if (!(quad.object.value in namesToChange)) {
-                namesToChange[quad.object.value] = quad.object.value + "_" + generateHashCode();
-                newObject.value = namesToChange[quad.object.value];
+        if (this.isNamedIndividual(currentQuad.object)) {
+            if (!(currentQuad.object.value in namesToChange)) {
+                namesToChange[currentQuad.object.value] = currentQuad.object.value + "_" + generateHashCode();
+                newObject = new NamedNode(namesToChange[currentQuad.object.value]);
             }
             else {
-                newObject.value = namesToChange[quad.object.value];
+                newObject = new NamedNode(namesToChange[currentQuad.object.value]);
             }
+        } else{
+            newObject = currentQuad.object;
         }
-        temporaryGraph.add(newSubject, quad.predicate, newObject);
+        let newQuad = new quad(newSubject, currentQuad.predicate, newObject, this.outputDoc);
+        temporaryGraph.add(newQuad);
     }
 
     isNamedIndividual = (element) => {
@@ -320,6 +336,4 @@ export class TemplateFactory {
             return true;
         }
     }
-
-
 }

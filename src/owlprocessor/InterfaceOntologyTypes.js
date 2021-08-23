@@ -15,10 +15,13 @@ export const RDF_TYPE = RDFPREFIX+"type";
 export const RDF_TYPE_NODE = RDF("type");
 export const RDF_LABEL = RDFSPREFIX+"label";
 export const RDF_LABEL_NODE = RDFS("label");
+export const OWL_IMPORT_NODE = OWL("imports");
+export const OWL_ONTOLOGY_NODE = OWL("Ontology");
+
+
 
 export const BLOCK_TYPE = OBOPPREFIX+"Block";
 export const BLOCK_NODE = OBOP("Block");
-
 export const BUTTON_TYPE =  OBOPPREFIX+"Button";
 export const BUTTON_NODE = OBOP("Button");
 export const LABEL_TYPE =  OBOPPREFIX+"Label";
@@ -52,5 +55,6 @@ export const ACTIVATES_ACTION__TYPE = OBOPPREFIX+"activatesAction";
 export const GENERATED_ACCORDING_TO_MODEL_NODE = OBOP("generatedAccordingToModel");
 export const GENERATED_ACCORDING_TO_MODEL_TYPE = OBOPPREFIX+"generatedAccordingToModel";
 
-
 export const CONNECTION_TYPE = OBOPPREFIX+"Connection";
+//Name of output file 
+export const OUTPUT_KG = "http://example.org/logicinterface/restaurant";

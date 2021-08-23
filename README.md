@@ -5,6 +5,12 @@ Description
 
 OBOP is an ontology used as a meta-model to design grapical user interfaces for population of ontology instances. OBOP terms are combined with terms of other target ontologies in order to create models for web applications to populate ontology instances (knowledge graphs). The ontology can be found in the file ontology/obop.owl. This project contains a prototype of tool used to run models generated using OBOP ontology.
 
+### Files
+
+|Version|Filename|PURL Link|
+|---|---|---|
+|Developement|ontology/obop.owl|http://purl.org/net/obop.owl| 
+
 ## Example of the OBOP model 
 
 An example of OBOP instance can be found in src/restaurant-example.owl. This model specifies an application to populate simple ontology with restaurant data.  
