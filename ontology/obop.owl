@@ -501,6 +501,17 @@ This can be used to track the version of the interface used to populate the know
     
 
 
+    <!-- http://purl.org/net/obop/ConversationBlock -->
+
+    <owl:Class rdf:about="http://purl.org/net/obop/ConversationBlock">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/InterfaceContainer"/>
+        <rdfs:comment xml:lang="en">A conversation block represents a collection of data entered in a single turn using a conversational agent. It servers as a modeling component for a part of the chatbot dialog which is analogous to HTML forms in web applications.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
+        <rdfs:label>ConversationBlock</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/net/obop/Field -->
 
     <owl:Class rdf:about="http://purl.org/net/obop/Field">
@@ -610,16 +621,6 @@ This can be used to track the version of the interface used to populate the know
     </owl:Class>
     
 
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
