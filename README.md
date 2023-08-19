@@ -5,7 +5,7 @@ Description
 
 OBOP is an ontology used as a meta-model to design  user interfaces for population of knowledge graphs. OBOP terms are combined with terms of other target ontologies in order to create models for web applications or conversational agents, such as chatbots, which facilitate the population of knowledge graphs. The ontology can be found in the file ontology/obop.owl.  
 
-Within this project, a prototype tool has been developed to run the models of web applications generated using OBOP ontology. The prototype tool for executing chatbots generated using models (generated using the OBOP as well) can be found in the repository <a href="https://github.com/ontosoft/ontochatbot" target="_blank">Ontology-based chatbots for Ontology population</a>
+Within this project, a prototype tool has been developed to run the models of web applications generated using OBOP ontology. The prototype tool for executing chatbots generated using models (created using the OBOP terms) can be found in the repository <a href="https://github.com/ontosoft/ontochatbot" target="_blank">Ontology-based chatbots for Ontology population</a>
   
 
 ### Files
