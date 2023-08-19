@@ -3,7 +3,10 @@
 Description
 -------------
 
-OBOP is an ontology used as a meta-model to design grapical user interfaces for population of ontology instances. OBOP terms are combined with terms of other target ontologies in order to create models for web applications to populate ontology instances (knowledge graphs). The ontology can be found in the file ontology/obop.owl. This project contains a prototype of tool used to run models generated using OBOP ontology.
+OBOP is an ontology used as a meta-model to design  user interfaces for population of knowledge graphs. OBOP terms are combined with terms of other target ontologies in order to create models for web applications or conversational agents, such as chatbots, which facilitate the population of knowledge graphs. The ontology can be found in the file ontology/obop.owl.  
+
+Within this project, a prototype tool has been developed to run the models of web applications generated using OBOP ontology. The prototype tool for executing chatbots generated using models (generated using the OBOP as well) can be found in the repository <a href="https://github.com/ontosoft/ontochatbot" target="_blank">Ontology-based chatbots for Ontology population</a>
+  
 
 ### Files
 
@@ -11,7 +14,7 @@ OBOP is an ontology used as a meta-model to design grapical user interfaces for 
 |---|---|---|
 |Developement|ontology/obop.owl|http://purl.org/net/obop.owl| 
 
-## Example of the OBOP model 
+## Example of the OBOP model for a web application 
 
 An example of OBOP instance can be found in src/restaurant-example.owl. This model specifies an application to populate simple ontology with restaurant data.  
 
