@@ -20,6 +20,10 @@ export const ModelNavigator = connect(store => store, mapDispatchToProps )(
                 onClick={this.getData} >
                 Load model
             </button>
+            <button className="btn btn-primary m-2"
+                onClick={this.getData} >
+                Load model from file
+            </button>
         </div>)
     }
 });
