@@ -608,7 +608,7 @@ This can be used to track the version of the interface used to populate the know
     <!-- http://purl.org/net/obop/HorizontalLayout -->
 
     <owl:Class rdf:about="http://purl.org/net/obop/HorizontalLayout">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/VisualElement"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/Layout"/>
         <rdfs:label rdf:resource="http://purl.org/net/obop/v01"/>
         <rdfs:label xml:lang="en">HorizontalLayout</rdfs:label>
     </owl:Class>
@@ -621,6 +621,14 @@ This can be used to track the version of the interface used to populate the know
         <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/VisualElement"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
         <rdfs:isDefinedBy xml:lang="en">Label</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/obop/Layout -->
+
+    <owl:Class rdf:about="http://purl.org/net/obop/Layout">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/VisualElement"/>
     </owl:Class>
     
 
@@ -697,7 +705,7 @@ This can be used to track the version of the interface used to populate the know
     <!-- http://purl.org/net/obop/VerticalLayout -->
 
     <owl:Class rdf:about="http://purl.org/net/obop/VerticalLayout">
-        <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/VisualElement"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/Layout"/>
         <rdfs:label rdf:resource="http://purl.org/net/obop/v01"/>
         <rdfs:label xml:lang="en">VerticalLayout</rdfs:label>
     </owl:Class>
