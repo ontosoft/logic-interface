@@ -142,6 +142,17 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
     
 
 
+    <!-- http://purl.org/net/obop/actionInBlock -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/actionInBlock">
+        <rdfs:domain rdf:resource="http://purl.org/net/obop/BlockAction"/>
+        <rdfs:range rdf:resource="http://purl.org/net/obop/Block"/>
+        <rdfs:comment xml:lang="en">This object proprty speciefies that an action manipulates data in the referenced block. For example, an individual of the SubmitBlockAction belongs to a block (form) and represents submit function  the form.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/net/obop/activatesAction -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/obop/activatesAction">
@@ -519,6 +530,14 @@ This can be used to track the version of the interface used to populate the know
     
 
 
+    <!-- http://purl.org/net/obop/BlockAction -->
+
+    <owl:Class rdf:about="http://purl.org/net/obop/BlockAction">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/Action"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/net/obop/Branching -->
 
     <owl:Class rdf:about="http://purl.org/net/obop/Branching">
@@ -698,6 +717,14 @@ This can be used to track the version of the interface used to populate the know
         <rdfs:comment xml:lang="en">A part of the model that consists of more nodes and edges.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
         <rdfs:label xml:lang="en">Subgraph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/obop/SubmitBlockAction -->
+
+    <owl:Class rdf:about="http://purl.org/net/obop/SubmitBlockAction">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/BlockAction"/>
     </owl:Class>
     
 
