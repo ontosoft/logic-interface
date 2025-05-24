@@ -408,6 +408,15 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
     
 
 
+    <!-- http://purl.org/net/obop/hasInitiator -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/obop/hasInitiator">
+        <rdfs:domain rdf:resource="http://purl.org/net/obop/Action"/>
+        <rdfs:comment xml:lang="en">This property specifies the activity (attribute) in the HTML element that initiates the corresponding action. This is for example &quot;onclick&quot; attribute of the HTML button element. The values are textual names for these attributes in camel case, e.g., &quot;onClick&quot;. There can be more values for the same action.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://purl.org/net/obop/hasLabel -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/net/obop/hasLabel">
