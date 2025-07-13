@@ -162,8 +162,8 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
         <rdfs:label xml:lang="en">activates action</rdfs:label>
     </owl:ObjectProperty>
     
-    <!-- http://purl.org/net/obop/performsAction -->
-    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/performsAction">
+    <!-- http://purl.org/net/obop/executesAction -->
+    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/executesAction">
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://purl.org/net/obop/Action"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
