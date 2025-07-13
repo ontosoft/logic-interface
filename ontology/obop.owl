@@ -162,7 +162,15 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
         <rdfs:label xml:lang="en">activates action</rdfs:label>
     </owl:ObjectProperty>
     
-
+    <!-- http://purl.org/net/obop/performsAction -->
+    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/performsAction">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://purl.org/net/obop/Action"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
+        <rdfs:comment xml:lang="en">An Action is directly executed when the control flow reaches it. In contrast to the activatesAction property, this property is used to specify that the action is immediately performed when this property is reached in the control flow.</rdfs:comment> 
+true).</rdfs:comment>
+        <rdfs:label xml:lang="en">Execute action</rdfs:label>
+    </owl:ObjectProperty>
 
     <!-- http://purl.org/net/obop/activatesBranching -->
 
@@ -369,6 +377,15 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
     <!-- http://purl.org/net/obop/specifiedBy -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/obop/specifiedBy"/>
+    
+
+
+    <!-- http://purl.org/net/obop/targetClass -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/targetClass">
+        <rdfs:domain rdf:resource="http://purl.org/net/obop/Block"/>
+        <rdfs:comment xml:lang="en">This object property corresponds to the SHACL.targetClass property and it is related to the block. It specifies the type of instance that is generated when the form is submited. All other block (form) elements are often used to define  data properties of this instance.</rdfs:comment>
+    </owl:ObjectProperty>
     
 
 
