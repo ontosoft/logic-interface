@@ -147,7 +147,7 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
     <owl:ObjectProperty rdf:about="http://purl.org/net/obop/actionInBlock">
         <rdfs:domain rdf:resource="http://purl.org/net/obop/BlockAction"/>
         <rdfs:range rdf:resource="http://purl.org/net/obop/Block"/>
-        <rdfs:comment xml:lang="en">This object proprty speciefies that an action manipulates data in the referenced block. For example, an individual of the SubmitBlockAction belongs to a block (form) and represents submit function  the form.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This object property specifies that an action manipulates data in the referenced block. For example, an instance of SubmitBlockAction is associated with a block (form) and represents the form&apos;s submit function.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
     </owl:ObjectProperty>
     
@@ -159,18 +159,10 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://purl.org/net/obop/Action"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">activates action</rdfs:label>
+        <rdfs:label xml:lang="en">activatesAction</rdfs:label>
     </owl:ObjectProperty>
     
-    <!-- http://purl.org/net/obop/executesAction -->
-    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/executesAction">
-        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:range rdf:resource="http://purl.org/net/obop/Action"/>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:comment xml:lang="en">An Action is directly executed when the control flow reaches it. In contrast to the activatesAction property, this property is used to specify that the action is immediately performed when this property is reached in the control flow.</rdfs:comment> 
-true).</rdfs:comment>
-        <rdfs:label xml:lang="en">Execute action</rdfs:label>
-    </owl:ObjectProperty>
+
 
     <!-- http://purl.org/net/obop/activatesBranching -->
 
@@ -229,6 +221,18 @@ true).</rdfs:comment>
     
 
 
+    <!-- http://purl.org/net/obop/executesAction -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/executesAction">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://purl.org/net/obop/Action"/>
+        <rdfs:comment xml:lang="en">An Action is directly executed when the control flow reaches it. In contrast to the activatesAction property, this property is used to specify that the action is immediately performed when this property is reached in the control flow.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
+        <rdfs:label xml:lang="en">executesAction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/net/obop/generatedAccordingToModel -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/obop/generatedAccordingToModel">
@@ -247,7 +251,7 @@ true).</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://purl.org/net/obop/Branching"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">has branch</rdfs:label>
+        <rdfs:label xml:lang="en">hasBranching</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -258,7 +262,7 @@ true).</rdfs:comment>
         <rdfs:domain rdf:resource="http://purl.org/net/obop/Branching"/>
         <rdfs:range rdf:resource="http://purl.org/net/obop/Condition"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">has condition</rdfs:label>
+        <rdfs:label xml:lang="en">hasCondition</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -270,7 +274,7 @@ true).</rdfs:comment>
         <rdfs:range rdf:resource="http://purl.org/net/obop/Connection"/>
         <rdfs:comment xml:lang="en">The hasConnection relates an Action element to a Connection element that will be established between two instances in runtime.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">has connection</rdfs:label>
+        <rdfs:label xml:lang="en">hasConnection</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -282,7 +286,7 @@ true).</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:comment xml:lang="en">The hasDestination property relates a Connection element to an individual which is a destination of an ObjectProperty.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">has destination</rdfs:label>
+        <rdfs:label xml:lang="en">hasDestination</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -293,7 +297,7 @@ true).</rdfs:comment>
         <rdfs:domain rdf:resource="http://purl.org/net/obop/ListField"/>
         <rdfs:comment xml:lang="en">The property contains values that can be chosen in graphical control elements such as drop down lists or multiple choice lists.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">has field values</rdfs:label>
+        <rdfs:label xml:lang="en">hasFieldValues</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -376,7 +380,10 @@ true).</rdfs:comment>
 
     <!-- http://purl.org/net/obop/specifiedBy -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/specifiedBy"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/specifiedBy">
+        <rdfs:comment xml:lang="en">This object property specifies that an element has further specification in another element. For example, it is used to connect a property in a SHACL shape to a Field instance that contains a further description of the form element.</rdfs:comment>
+        <rdfs:label xml:lang="en">specifiedBy</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -408,7 +415,19 @@ true).</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment xml:lang="en">The property specifies that a given element (e.g., a named individual) belongs to the model part (implant that consists of named individuals belonging to the domain ontologies).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">belongs to model</rdfs:label>
+        <rdfs:label xml:lang="en">belongsToModel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/obop/extractFirstOnly -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/obop/extractFirstOnly">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/obop/Query"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">This property indicates wheter only the first variable is taken from the result of the SPARQLQuery.</rdfs:comment>
+        <rdfs:label xml:lang="en">extractFirstOnlyVariable</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -416,11 +435,12 @@ true).</rdfs:comment>
     <!-- http://purl.org/net/obop/finalValue -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/net/obop/finalValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/net/obop/Loop"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <rdfs:comment xml:lang="en">This property is used to specify the last (final value) in a loop.</rdfs:comment>
         <rdfs:label rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">has final value</rdfs:label>
+        <rdfs:label xml:lang="en">finalValue</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -441,7 +461,7 @@ true).</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
         <rdfs:isDefinedBy xml:lang="en">This property specifies the label of a visual element that has to stand next to that element. This could be a label next to the input field on a HTML form.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">has label</rdfs:label>
+        <rdfs:label xml:lang="en">hasLabel</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -454,7 +474,7 @@ true).</rdfs:comment>
         <rdfs:comment xml:lang="en">This property specifies the position of an element on a HTML form. 
 This is an integer number that represents the ordinary position among all other elements in the corresponding form looking from the upper left corner.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">has position</rdfs:label>
+        <rdfs:label xml:lang="en">hasPosition</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -486,7 +506,7 @@ This is an integer number that represents the ordinary position among all other 
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment xml:lang="en">The Default data property specifes whether the corresponding property is the default property. For instance a default value of a drop down list.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">is default</rdfs:label>
+        <rdfs:label xml:lang="en">isDefault</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -507,7 +527,17 @@ According to this description the user can choose a suitable model.</rdfs:commen
     <owl:DatatypeProperty rdf:about="http://purl.org/net/obop/modelNumber">
         <rdfs:comment xml:lang="en">The property assignes a number to the model part specifying the version of the current interface. 
 This can be used to track the version of the interface used to populate the knowledge graph.</rdfs:comment>
-        <rdfs:label xml:lang="en">has model number</rdfs:label>
+        <rdfs:label xml:lang="en">hasModelNumber</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/net/obop/sparqlText -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/obop/sparqlText">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:comment xml:lang="en">This datatype property holds the textual content of a SPARQL query in text form. It is a well-formulated SPARQL query in a string literal.</rdfs:comment>
+        <rdfs:label>sparqlText</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -709,7 +739,16 @@ This can be used to track the version of the interface used to populate the know
 
     <owl:Class rdf:about="http://purl.org/net/obop/LoopCondition">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">Loop condition</rdfs:label>
+        <rdfs:label xml:lang="en">LoopCondition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/obop/MakeConnectionAction -->
+
+    <owl:Class rdf:about="http://purl.org/net/obop/MakeConnectionAction">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/MoreBlockAction"/>
+        <rdfs:comment xml:lang="en">This action is reserved for making connections between elements entered by many blocks (forms).</rdfs:comment>
     </owl:Class>
     
 
@@ -722,9 +761,36 @@ This can be used to track the version of the interface used to populate the know
     
 
 
+    <!-- http://purl.org/net/obop/MoreBlockAction -->
+
+    <owl:Class rdf:about="http://purl.org/net/obop/MoreBlockAction">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/obop/Query -->
+
+    <owl:Class rdf:about="http://purl.org/net/obop/Query"/>
+    
+
+
     <!-- http://purl.org/net/obop/Question -->
 
-    <owl:Class rdf:about="http://purl.org/net/obop/Question"/>
+    <owl:Class rdf:about="http://purl.org/net/obop/Question">
+        <rdfs:comment xml:lang="en">This class represents questions posed in chatbots</rdfs:comment>
+        <rdfs:label xml:lang="en">Question</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/obop/SPARQLQuery -->
+
+    <owl:Class rdf:about="http://purl.org/net/obop/SPARQLQuery">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/Query"/>
+        <rdfs:comment xml:lang="en">This class is used to represent a SPARQL query executed over an output RDF graph. Since the result of such a query is also a graph (or a set of RDF triples), this class includes properties that specify which parts of the resulting data can be extracted and utilized. For example, it can be used to retrieve a list of relevant nodes or resources from the query results, enabling targeted access to specific portions of the data graph. One example is the property obop:extractFirstOnly.</rdfs:comment>
+        <rdfs:label xml:lang="en">SPARQLQuery</rdfs:label>
+    </owl:Class>
     
 
 
