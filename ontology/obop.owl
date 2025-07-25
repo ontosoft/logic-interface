@@ -15,7 +15,7 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:dctypes="http://purl.org/dc/dcmitype/"
      xmlns:ontologies="https://www.bbc.co.uk/ontologies/">
-    <owl:Ontology rdf:about="http://purl.org/net/obop">
+    <owl:Ontology rdf:about="urn:absolute:f">
         <owl:versionIRI rdf:resource="http://purl.org/net/obop/v01"/>
         <dc:creator xml:lang="en">Petko Rutesic</dc:creator>
         <dc:rights xml:lang="en">The OBOP ontology is available under the Creative Commons Attribution 3.0 Unported license; see http://creativecommons.org/licenses/by/3.0/. In a nutshell, you are free to copy, distribute and transmit the work; to remix/adapt the work (e.g. to import the ontology and create specializations of its elements), as long as you attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work). Proper Attribution: Simply include the statement &quot;This work is based on the OBOP ontology, link back to http://purl.org/net/obop</dc:rights>
@@ -279,6 +279,17 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
     
 
 
+    <!-- http://purl.org/net/obop/hasConnector -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/hasConnector">
+        <rdfs:domain rdf:resource="http://purl.org/net/obop/Connection"/>
+        <rdfs:range rdf:resource="http://purl.org/net/obop/Connector"/>
+        <rdfs:comment> Each connector specifies an object property that links two instances in a knowledge graph. A single connection may consist of multiple connectors and that is presented with this property".</rdfs:comment>
+        <rdfs:label xml:lang="en">hasConnector</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/net/obop/hasDestination -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/obop/hasDestination">
@@ -307,7 +318,7 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
     <owl:ObjectProperty rdf:about="http://purl.org/net/obop/hasLoop">
         <rdfs:range rdf:resource="http://purl.org/net/obop/Loop"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">has loop</rdfs:label>
+        <rdfs:label xml:lang="en">hasLoop</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -316,7 +327,7 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/obop/hasSequence">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">has sequence</rdfs:label>
+        <rdfs:label xml:lang="en">hasSequence</rdfs:label>
         <vs:term_status>testing</vs:term_status>
     </owl:ObjectProperty>
     
@@ -329,7 +340,7 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:comment xml:lang="en">This property relates a Connection element to an individual representing the source of an ObjectProperty. That would be the object of the ObjectProperty created during runtime.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">has source</rdfs:label>
+        <rdfs:label xml:lang="en">hasSource</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -420,13 +431,13 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
     
 
 
-    <!-- http://purl.org/net/obop/extractFirstOnly -->
+    <!-- http://purl.org/net/obop/extractFirstOnlyVariable -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/net/obop/extractFirstOnly">
+    <owl:DatatypeProperty rdf:about="http://purl.org/net/obop/extractFirstOnlyVariable">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/net/obop/Query"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment xml:lang="en">This property indicates wheter only the first variable is taken from the result of the SPARQLQuery.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This property indicates whether only the first variable is taken from the result of the SPARQLQuery.</rdfs:comment>
         <rdfs:label xml:lang="en">extractFirstOnlyVariable</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -644,8 +655,18 @@ This can be used to track the version of the interface used to populate the know
     <!-- http://purl.org/net/obop/Connection -->
 
     <owl:Class rdf:about="http://purl.org/net/obop/Connection">
+        <rdfs:comment xml:lang="en">This class describes the way in which two instances are related with object properties.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
         <rdfs:label xml:lang="en">Connection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/obop/Connector -->
+
+    <owl:Class rdf:about="http://purl.org/net/obop/Connector">
+        <rdfs:comment>This class represents connectors that specify further how two instances are connected. If the two instancess are represented by SHACL shapes for example, then each connector corresponds to a shacl:property that defines a shacl:path. Connection elements have one or more connectors because each connecton can contain more object properties that connect two  instances defined by SHACL shapes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Connector</rdfs:label>
     </owl:Class>
     
 
@@ -788,7 +809,7 @@ This can be used to track the version of the interface used to populate the know
 
     <owl:Class rdf:about="http://purl.org/net/obop/SPARQLQuery">
         <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/Query"/>
-        <rdfs:comment xml:lang="en">This class is used to represent a SPARQL query executed over an output RDF graph. Since the result of such a query is also a graph (or a set of RDF triples), this class includes properties that specify which parts of the resulting data can be extracted and utilized. For example, it can be used to retrieve a list of relevant nodes or resources from the query results, enabling targeted access to specific portions of the data graph. One example is the property obop:extractFirstOnly.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This class is used to represent a SPARQL query executed over an output RDF graph. Since the result of such a query is also a graph (or a set of RDF triples), this class includes properties that specify which parts of the resulting data can be extracted and utilized. For example, it can be used to retrieve a list of relevant nodes or resources from the query results, enabling targeted access to specific portions of the data graph. One example is the property obop:extractFirstOnlyVariable.</rdfs:comment>
         <rdfs:label xml:lang="en">SPARQLQuery</rdfs:label>
     </owl:Class>
     
