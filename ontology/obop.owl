@@ -211,6 +211,30 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
     
 
 
+    <!-- http://purl.org/net/obop/connectionHasSource -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/connectionHasSource">
+        <rdfs:domain rdf:resource="http://purl.org/net/obop/Connection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">This property relates a Connection element to an individual representing the source of an ObjectProperty. That would be the subject of the ObjectProperty created during runtime.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
+        <rdfs:label xml:lang="en">connectionHasSource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/obop/connectionHasTarget -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/connectionHasTarget">
+        <rdfs:domain rdf:resource="http://purl.org/net/obop/Connection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">The connectionHasTarget property relates a Connection element to an individual which is an object of an ObjectProperty.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
+        <rdfs:label xml:lang="en">connectionHasTarget</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/net/obop/containsDatatype -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/net/obop/containsDatatype">
@@ -284,20 +308,18 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
     <owl:ObjectProperty rdf:about="http://purl.org/net/obop/hasConnector">
         <rdfs:domain rdf:resource="http://purl.org/net/obop/Connection"/>
         <rdfs:range rdf:resource="http://purl.org/net/obop/Connector"/>
-        <rdfs:comment> Each connector specifies an object property that links two instances in a knowledge graph. A single connection may consist of multiple connectors and that is presented with this property".</rdfs:comment>
+        <rdfs:comment> Each connector specifies an object property that links two instances in a knowledge graph. A single connection may consist of multiple connectors and that is presented with this property&quot;.</rdfs:comment>
         <rdfs:label xml:lang="en">hasConnector</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/net/obop/hasDestination -->
+    <!-- http://purl.org/net/obop/hasDestinationOfDependency -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/hasDestination">
-        <rdfs:domain rdf:resource="http://purl.org/net/obop/Connection"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:comment xml:lang="en">The hasDestination property relates a Connection element to an individual which is a destination of an ObjectProperty.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">hasDestination</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/hasDestinationOfDependency">
+        <rdfs:domain rdf:resource="http://purl.org/net/obop/Dependency"/>
+        <rdfs:comment>This object property points to the object side of the dependecy statement. This is especially useful for expressing rdfs:subClassOf inference rules as this represents the object of  rdfs:subClassOf inference rule.</rdfs:comment>
+        <rdfs:seeAlso>hasDestinationOfDependency</rdfs:seeAlso>
     </owl:ObjectProperty>
     
 
@@ -333,14 +355,12 @@ Note: The base URI of OBOP is http://purl.org/obop/. Please make sure you are on
     
 
 
-    <!-- http://purl.org/net/obop/hasSource -->
+    <!-- http://purl.org/net/obop/hasSourceOfDependency -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/hasSource">
-        <rdfs:domain rdf:resource="http://purl.org/net/obop/Connection"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:comment xml:lang="en">This property relates a Connection element to an individual representing the source of an ObjectProperty. That would be the object of the ObjectProperty created during runtime.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
-        <rdfs:label xml:lang="en">hasSource</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://purl.org/net/obop/hasSourceOfDependency">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/obop/Dependency"/>
+        <rdfs:comment xml:lang="en">This object property points to the left side of the dependecy statement. This is especially useful for expressing rdfs:subClassOf inference rules as this represents the left side of  rdfs:subClassOf</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -655,6 +675,18 @@ This can be used to track the version of the interface used to populate the know
     <!-- http://purl.org/net/obop/Connection -->
 
     <owl:Class rdf:about="http://purl.org/net/obop/Connection">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/obop/connectionHasSource"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/obop/connectionHasTarget"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">This class describes the way in which two instances are related with object properties.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
         <rdfs:label xml:lang="en">Connection</rdfs:label>
@@ -679,6 +711,12 @@ This can be used to track the version of the interface used to populate the know
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
         <rdfs:label>ConversationBlock</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/obop/Dependency -->
+
+    <owl:Class rdf:about="http://purl.org/net/obop/Dependency"/>
     
 
 
@@ -707,6 +745,16 @@ This can be used to track the version of the interface used to populate the know
         <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/Layout"/>
         <rdfs:label rdf:resource="http://purl.org/net/obop/v01"/>
         <rdfs:label xml:lang="en">HorizontalLayout</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/obop/InferenceDependency -->
+
+    <owl:Class rdf:about="http://purl.org/net/obop/InferenceDependency">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/Dependency"/>
+        <rdfs:comment>This class serves the need of expressing inference rules such as RDFS and OWL inference rules.</rdfs:comment>
+        <rdfs:label>InferenceDependency</rdfs:label>
     </owl:Class>
     
 
@@ -820,6 +868,28 @@ This can be used to track the version of the interface used to populate the know
     <owl:Class rdf:about="http://purl.org/net/obop/SingleValueRequest">
         <rdfs:comment xml:lang="en">A single value request corresponds to a question to insert a value in a chatbot.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/net/obop/v01"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/obop/SubClassOfDependency -->
+
+    <owl:Class rdf:about="http://purl.org/net/obop/SubClassOfDependency">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/obop/InferenceDependency"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/obop/hasDestinationOfDependency"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/net/obop/hasSourceOfDependency"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This class is used to express rdfs:subClassOf inference rule in interface models.</rdfs:comment>
+        <rdfs:label>SubClassOfDependency</rdfs:label>
     </owl:Class>
     
 
